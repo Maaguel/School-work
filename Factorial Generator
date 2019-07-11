@@ -1,0 +1,42 @@
+print("This is a program that can run a factorial equation on any integer that you input")
+
+valid = False
+#This creates the boolean variable that is used to terminate the loop
+while valid == False:
+#Creates a condition that keeps looping while the boolean operator remains "false"
+    try:
+#States the correct crtieria to be inputted
+        integer = int(input("Please enter an integer:"))
+#Asks the user to enter a number and stores it in the variable "integer"
+        if isinstance(integer, int) == True:
+#Creates the condition that this variable has to be an integer, changes boolean operator to true
+            if integer > 0:
+#Creates the condition that this variable has to be larger than 0
+                    valid = True
+#Changes the boolean operator to true
+    except ValueError:
+#Explains what should be outputted if the criteria is not met
+        print("This is not a integer, try again:")
+#Outputs the error message to the user
+temp2 = integer
+#Stores the integer in temp2 so that when it changes, the original value can still be found at the end
+factorial = 1
+#Defines the variable so it can be used within the for loop
+if integer == 0:
+#Determies if the integer is zero
+    factorial = 1
+#Defines the factorial as 1 if the input is zero
+else:
+#Says the loop will only be ran if the if statement is not correct
+    for i in range(integer):
+#Begins a for loop that will loop through as many times as the integer value is inputted as
+        temp1 = integer
+#Stores the integer varaible in another variable so it can be used for a calculation without its
+#value permanently changing 
+        factorial = (factorial * temp1)
+#Performs the necessary calculation to find the factorial
+        integer = (integer - 1)
+#Minuese one from the integer variable so that it eventually reaches zero so the loop can end 
+print("The factorial of", temp2, "is", factorial)
+#Outputs the calculated factorial value
+
